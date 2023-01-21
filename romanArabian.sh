@@ -128,12 +128,12 @@ then
 
             if [ $resto -eq 5 ]
                 then 
-                    resultado+="L";
+                    resultado+="V";
             fi
 
             if [ $resto -ge 6 ] && [ $resto -lt 9 ]
                 then
-                    resultado+="L"
+                    resultado+="V"
 
                     for (( c=1; c<=$resto ; c++))
                     do
