@@ -55,7 +55,7 @@ then
                 then
                     resultado+="D"
 
-                    for (( c=1; c<=$cociente ; c++))
+                    for (( c=6; c<=$cociente ; c++))
                     do
                         resultado+="C";
                     done
@@ -113,6 +113,8 @@ then
     if [ $resto -gt 0 ]
         then
 
+            echo "ENTRA GT 0"
+
             if [ $resto -lt 4 ]
                 then
                     for (( c=1; c<=$resto; c++))
@@ -133,15 +135,16 @@ then
 
             if [ $resto -ge 6 ] && [ $resto -lt 9 ]
                 then
-                    resultado+="V"
+                    resultado+="V";
 
-                    for (( c=1; c<=$resto ; c++))
+                    for (( c=6; c<=$resto; c++))
                     do
+                        echo "entra I"
                         resultado+="I";
                     done
             fi
 
-            if [ $cociente -eq 9 ]
+            if [ $resto -eq 9 ]
                 then
                     resultado+="IX";
             fi
@@ -167,15 +170,11 @@ then
             copia_reverse="$copia_reverse${cadena:$i:1}" #le doy la vuelta a la cadena romana
         done
 
-        echo $copia_reverse;
-        echo $len;
         for (( j=0; j<$len; j++)) #Para cada letra
         do
             #extraigo la letra i de la copia
             letra=${copia_reverse[@]:$j:1}
 
-            echo $letra;
-            echo "busqueda";
             pos=0;
             #busco la letra en el array de romanos, para obtener su índice en dicho array
             for ((k=0 ; k<$len_roman; k++))
